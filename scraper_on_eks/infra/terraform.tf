@@ -1,9 +1,9 @@
 terraform {
-  backend "s3" {
-    bucket = "nullops-test-terraform"
-    key    = "eks/terraform.tfstate"
-    region = "eu-west-1"
-  }
+  # backend "s3" {
+  #   bucket = "nullops-test-terraform"
+  #   key    = "eks/terraform.tfstate"
+  #   region = "eu-west-1"
+  # }
   required_providers {
     aws = {
       source  = "hashicorp/aws"
@@ -22,7 +22,13 @@ terraform {
       version = "0.8.0"
     }
   }
-  required_version = ">= 0.12.0"
+  required_version = ">= 1.2.8"
+  cloud {
+    organization =  "nullopsco"
+    workspaces {
+      name = "overengineered-solutions"
+    }
+  }
 }
 
 resource "random_id" "id" {
