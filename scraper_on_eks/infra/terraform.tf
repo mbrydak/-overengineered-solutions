@@ -7,7 +7,7 @@ terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = "~> 4.16"
+      version = "~> 4.30"
     }
     kubernetes = {
       source  = "hashicorp/kubernetes"
@@ -24,13 +24,13 @@ terraform {
   }
   required_version = ">= 1.2.8"
   cloud {
-    organization =  "nullopsco"
+    organization = "nullopsco"
     workspaces {
-      name = "overengineered-solutions"
+      name = "overengineered-solutions-main"
     }
   }
 }
 
 resource "random_id" "id" {
-  byte_length  = 3
+  byte_length = 3
 }
