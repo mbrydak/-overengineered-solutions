@@ -1,11 +1,11 @@
 module "vpc_eks" {
-  source           = "terraform-aws-modules/vpc/aws"
-  version          = "3.14.4"
-  name             = "scraper-eks-vpc"
-  cidr             = var.vpc_cidr_block
-  azs              = var.aws_availability_zones
-  private_subnets  = var.private_subnet_cidr_blocks
-  public_subnets   = var.public_subnet_cidr_blocks
+  source          = "terraform-aws-modules/vpc/aws"
+  version         = "3.14.4"
+  name            = "scraper-eks-vpc"
+  cidr            = var.vpc_cidr_block
+  azs             = var.aws_availability_zones
+  private_subnets = var.private_subnet_cidr_blocks
+  public_subnets  = var.public_subnet_cidr_blocks
 
   enable_nat_gateway     = true
   one_nat_gateway_per_az = false
