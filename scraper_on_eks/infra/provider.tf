@@ -20,6 +20,6 @@ provider "aws" {
 }
 
 locals {
-  cluster_name = "wordpress-eks"
+  cluster_name = "scraper-eks"
   region       = var.region
 }
