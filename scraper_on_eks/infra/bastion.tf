@@ -9,9 +9,6 @@ module "bastion" {
   subnet_id              = module.vpc_eks.public_subnets[0]
   vpc_security_group_ids = [module.bastion_sg.security_group_id]
   iam_instance_profile   = module.ssm_role.iam_instance_profile_id
-  tags = {
-    "name" = "bastion-${random_id.id.hex}"
-  }
 }
 module "ssm_role" {
   source  = "terraform-aws-modules/iam/aws//modules/iam-assumable-role"

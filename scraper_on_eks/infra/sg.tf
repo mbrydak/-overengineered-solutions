@@ -11,8 +11,5 @@ module "bastion_sg" {
   vpc_id              = module.vpc_eks.vpc_id
   ingress_cidr_blocks = ["${chomp(data.http.myip.body)}/32"]
 
-  tags = {
-    "name" = "bastion-sg--${random_id.id.hex}"
-  }
 }
 
