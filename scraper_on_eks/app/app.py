@@ -32,7 +32,7 @@ def json_from_html_using_bs4(base_url, params):
 app = Flask(__name__)
 
 
-@app.route("/api/v1/scraper", methods=["GET"])
+@app.route("/api/v1/jokes", methods=["GET"])
 def index():
     URL = "http://bash.org.pl/latest/"
     PARAMS = {"page": 1}
@@ -43,4 +43,4 @@ def index():
     return computed_response
 
 
-app.run(debug=True)
+app.run(debug=True, host="0.0.0.0")
