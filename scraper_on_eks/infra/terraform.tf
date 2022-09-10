@@ -26,7 +26,7 @@ terraform {
   cloud {
     organization = "nullopsco"
     workspaces {
-      name = "overengineered-solutions-main"
+      name = "scraper_on_eks"
     }
   }
 }
