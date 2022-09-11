@@ -14,4 +14,5 @@ RUN pyinstaller app.py --onefile --noconfirm
 FROM ubuntu:22.04
 
 COPY --from=builder /app/dist/app /
+EXPOSE 5000
 CMD ["/app"]
