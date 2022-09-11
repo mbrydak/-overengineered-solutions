@@ -36,11 +36,15 @@ app = Flask(__name__)
 def index():
     URL = "http://bash.org.pl/latest/"
     PARAMS = {"page": 1}
-    computed_response = []
+    computed_response_list_of_lists = []
+    final_list = []
     for i in range(1, 6):
         PARAMS["page"] = i
-        computed_response.append(json_from_html_using_bs4(URL, PARAMS))
-    return computed_response
+        computed_response_list_of_lists.append(json_from_html_using_bs4(URL, PARAMS))
+    for sub_list in computed_response_list_of_lists:
+        for item in sub_list:
+            final_list.append(item)
+    return final_list
 
 
-app.run(debug=True, host="0.0.0.0")
+app.run(debug=False, host="0.0.0.0")
