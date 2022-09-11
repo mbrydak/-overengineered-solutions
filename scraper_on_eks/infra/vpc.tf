@@ -23,12 +23,12 @@ module "vpc_eks" {
     "kubernetes.io/cluster/${local.cluster_name}" = "shared"
   }
   private_subnet_tags = {
-    "name"                                        = "sub-priv-scraper-eks-vpc${random_id.id.hex}"
+    # "name"                                        = "sub-priv-scraper-eks-vpc${random_id.id.hex}"
     "kubernetes.io/cluster/${local.cluster_name}" = "shared"
     "kubernetes.io/role/internal-elb"             = 1
   }
   public_subnet_tags = {
-    "name"                                        = "sub-pub-scraper-eks-vpc-${random_id.id.hex}"
+    # "name"                                        = "sub-pub-scraper-eks-vpc-${random_id.id.hex}"
     "kubernetes.io/cluster/${local.cluster_name}" = "shared"
     "kubernetes.io/role/elb"                      = 1
   }
